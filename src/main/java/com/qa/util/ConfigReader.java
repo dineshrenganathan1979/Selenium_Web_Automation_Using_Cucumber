@@ -9,6 +9,7 @@ public class ConfigReader {
 
 	private static Properties prop;
 	private static String loginURL;
+	private static String contactsPageURL;
 
 	/**
 	 * This method is used to load the properties from config.properties file
@@ -32,38 +33,11 @@ public class ConfigReader {
 	}
 	
 	public static String getLoginURL(){
-		
-		prop = new Properties();
-		try {
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-			prop.load(ip);
-			loginURL = prop.getProperty("loginPageUrl");
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return loginURL;
-		
+		return prop.getProperty("loginPageUrl");
 	}
 	
 	public static String getContactsPageURL(){
-		
-		prop = new Properties();
-		try {
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-			prop.load(ip);
-			loginURL = prop.getProperty("contactsPageUrl");
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return loginURL;
+		return prop.getProperty("contactsPageUrl");
 		
 	}
 
